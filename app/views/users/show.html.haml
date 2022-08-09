@@ -1,0 +1,10 @@
+- provide(:title, @user.name)
+.row
+  %aside.col-md-4
+    %section.user_info
+      %h1
+        = gravatar_for @user
+        = @user.name
+.row
+  .col-md-12
+    = link_to "Detalhes da conta", bank_account_path(@bank_account.id), class: "btn btn-lg btn-primary"

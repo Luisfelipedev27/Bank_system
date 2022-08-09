@@ -1,0 +1,31 @@
+
+#modal-transaction.modal.fade.modal-fade
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{type:'button', data:{dismiss:'modal'}}
+          %span{aria:{hidden:'true'}}
+            %i.fa.fa-close
+          %span.sr-only Close
+        %h4.modal-title
+          Nova transação
+      .modal-body
+        .row
+          .col-md-12
+            .notification
+        .row
+          .col-md-4
+            %label
+              Valor
+            = text_field_tag :amount, 0.00, id: "input-amount", class: "form-control"
+          .col-md-4
+            %label
+              Tipo de transação
+            = select_tag :transaction_type, options_for_select(AccountTransaction::TRANSACTION_TYPES), id: "select-transaction-type", class: "form-control"
+          .col-md-4
+            %label
+              Conta a receber valor
+            = text_field_tag :recipient_id, @bank_account.account_number,id: "input-recipient-type", class: "form-control" 
+      .modal-footer
+        %button.btn.btn-default{type:'button', data:{dismiss:'modal'}} Fechar
+        %button#btn-save.btn.btn-primary{type:'button'} Salvar
