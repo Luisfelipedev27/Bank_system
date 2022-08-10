@@ -16,7 +16,7 @@ module BankAccounts
           transaction_type: transaction_type,
           recipient_id: recipient_id
         )
-        tax_nine_to_eighteen = 5
+        tax_nine_to_eighteen = 5 
         #tax_another_time = 7 Pendente
         #tax_greater_than_thousand = 10 #Pendente
         bank_account.update(balance: bank_account.balance - amount) if transaction_type == "Saque"
